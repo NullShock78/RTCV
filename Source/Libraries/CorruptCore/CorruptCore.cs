@@ -126,7 +126,11 @@ namespace RTCV.CorruptCore
             set => AllSpec.CorruptCoreSpec.Update(RTCSPEC.CORE_SELECTEDENGINE, value);
         }
 
-        public static ICorruptionEngine SelectedPluginEngine { get; set; } = null;
+        public static ICorruptionEngine SelectedPluginEngine
+        {
+            get => (ICorruptionEngine)AllSpec.CorruptCoreSpec[RTCSPEC.CORE_SELECTEDPLUGINENGINE];
+            set => AllSpec.CorruptCoreSpec.Update(RTCSPEC.CORE_SELECTEDPLUGINENGINE, value);
+        }
 
         public static int CurrentPrecision
         {
